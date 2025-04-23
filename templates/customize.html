@@ -1,79 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Customize Your Cup</title>
   <link rel="stylesheet" href="/public/css/customize.css" />
+  <script defer src="/public/js/customize.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <nav>
-        <div class="nav-links">
-            <a href="/">HOME</a>
-            <a href="/about">ABOUT US</a>
-            <a href="/partner">PARTNER WITH US</a>
-            <a href="/contact">CONTACT US</a>
-        </div>
-        <div class="contact-info">
-            <i class="fas fa-phone"></i>
-            <div>
-                <span>CALL US ANYTIME</span>
-                <span>+91 9234541697</span>
-            </div>
-        </div>
-        <div class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
-    
+  <nav>
+    <div class="nav-links">
+      <a href="/">HOME</a>
+      <a href="/about">ABOUT US</a>
+      <a href="/partner">PARTNER WITH US</a>
+      <a href="/contact">CONTACT US</a>
+    </div>
+    <div class="contact-info">
+      <i class="fas fa-phone"></i>
+      <div>
+        <span>CALL US ANYTIME</span>
+        <span>+91 9234541697</span>
+      </div>
+    </div>
+    <div class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
   <div class="container">
     <h1>Customize Your Cup</h1>
     <p class="subtitle">Design Your Perfect Advertising Medium</p>
     <p class="description">
-      Create a custom cup advertisement that perfectly represents your brand. Choose your cup size, design options, and distribution network to maximize your campaign’s impact.
+      Create a custom cup advertisement that perfectly represents your brand. Choose your cup size, design options, and
+      distribution network to maximize your campaign’s impact.
     </p>
-
-    <div class="customization-section">
+    
+    <form id="customization-form" class="customization-section" action="/customize" method="POST" enctype="multipart/form-data">
       <div class="form-section">
         <h2>Design Your Cup Ad</h2>
-
+    
         <div class="section">
           <label>1. Choose Cup Size</label>
-          <label><input type="radio" name="cup-size" /> Small (8 oz) – Perfect for espresso and small beverages</label>
-          <label><input type="radio" name="cup-size" checked /> Medium (12 oz) – Standard size for most coffee shops</label>
-          <label><input type="radio" name="cup-size" /> Large (16 oz) – Maximum visibility for your advertisement</label>
+          <label><input type="radio" name="cup-size" value="small" /> Small (8 oz)</label>
+          <label><input type="radio" name="cup-size" value="medium" checked /> Medium (12 oz)</label>
+          <label><input type="radio" name="cup-size" value="large" /> Large (16 oz)</label>
         </div>
-
+    
         <div class="section">
           <label>2. Design Coverage</label>
-          <label><input type="radio" name="design-coverage" /> Logo Only – Just your brand logo on the cup</label>
-          <label><input type="radio" name="design-coverage" /> Partial Design – Logo with minimal text/graphics</label>
-          <label><input type="radio" name="design-coverage" checked /> Full Design – Complete custom artwork around the cup</label>
+          <label><input type="radio" name="design-coverage" value="logo-only" /> Logo Only</label>
+          <label><input type="radio" name="design-coverage" value="partial" /> Partial Design</label>
+          <label><input type="radio" name="design-coverage" value="full" checked /> Full Design</label>
         </div>
-
+    
         <div class="section">
           <label>3. Color Options</label>
-          <input type="color" value="#0066a1" />
-          <input type="color" />
-          <label><input type="checkbox" /> Full color printing (additional cost)</label>
+          <input type="color" name="primary-color" value="#0066a1" />
+          <input type="color" name="secondary-color" />
+          <label><input type="checkbox" name="full-color" value="yes" /> Full color printing (additional cost)</label>
         </div>
-
+    
         <div class="section">
           <label>4. Additional Features</label>
-          <label><input type="checkbox" checked /> QR Code Integration</label>
-          <label><input type="checkbox" /> Special Finish (Glossy/Matte)</label>
-          <label><input type="checkbox" /> Eco-Friendly Materials</label>
-          <label><input type="checkbox" /> Custom Cup Sleeve</label>
+          <label><input type="checkbox" name="features" value="qr-code" checked /> QR Code Integration</label>
+          <label><input type="checkbox" name="features" value="special-finish" /> Special Finish (Glossy/Matte)</label>
+          <label><input type="checkbox" name="features" value="eco-materials" /> Eco-Friendly Materials</label>
+          <label><input type="checkbox" name="features" value="cup-sleeve" /> Custom Cup Sleeve</label>
         </div>
-
+    
         <div class="section">
           <label>5. Order Quantity</label>
-          <input type="range" min="1000" max="50000" value="5000" />
-          <p>5,000 cups</p>
+          <input type="range" name="quantity" min="1000" max="50000" value="5000" id="quantity-range" />
+          <p id="quantity-display">5,000 cups</p>
         </div>
-
-        <button class="quote-btn">Request Quote</button>
+    
+        <div class="section">
+          <label>6. Upload Your Design File</label>
+          <input type="file" name="design-file" accept="image/*,.pdf,.ai,.psd" />
+          <label><input type="checkbox" name="need-design-help" value="yes" /> If you want us to make your ad as well for you, please check the box.</label>
+        </div>
+    
+        <div class="section">
+          <h3>7. Your Information</h3>
+          <label>
+            Full Name
+            <input type="text" name="customer-name" placeholder="Enter your full name" required />
+          </label>
+          <label>
+            Contact Number
+            <input type="tel" name="customer-contact" placeholder="+91 9876543210" required />
+          </label>
+          <label>
+            Delivery Address
+            <textarea name="customer-address" placeholder="Enter full delivery address" rows="4" required></textarea>
+          </label>
+        </div>
+    
+        <button class="quote-btn" type="submit">Request Quote</button>
       </div>
+    </form>
+    
 
       <div class="preview-section">
         <h3>Your Custom Cup Preview</h3>
@@ -89,15 +118,19 @@
         </ul>
       </div>
 
-      <div class="why-section">
+      <div class="why-section feature">
         <h3>Why Customize?</h3>
-        <p><strong>Brand Recognition:</strong> Custom cup designs ensure your brand stands out and gets noticed by consumers.</p>
+        <p><strong>Brand Recognition:</strong> Custom cup designs ensure your brand stands out and gets noticed by
+          consumers.</p>
         <p><strong>Targeted Marketing:</strong> Choose specific café locations that match your target demographic.</p>
-        <p><strong>Measurable Results:</strong> QR codes and special offers allow you to track engagement and conversion rates.</p>
-        <p><strong>Cost-Effective:</strong> Cup advertising provides excellent ROI compared to traditional advertising channels.</p>
+        <p><strong>Measurable Results:</strong> QR codes and special offers allow you to track engagement and conversion
+          rates.</p>
+        <p><strong>Cost-Effective:</strong> Cup advertising provides excellent ROI compared to traditional advertising
+          channels.</p>
         <p class="contact">Need help with your design? <a href="/contact">Contact our team</a></p>
       </div>
     </div>
   </div>
 </body>
+
 </html>
