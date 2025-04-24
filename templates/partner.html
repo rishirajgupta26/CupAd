@@ -39,7 +39,7 @@
 
   <section class="intro-section">
     <div class="image-wrapper">
-      <img src="/public/images/part.png" alt="Why partner with us?" />
+      <img src="/public/images/customize.png" alt="Why partner with us?" />
     </div>
     <div class="text-content">
       <h2>Why Partner With Us?</h2>
@@ -52,7 +52,7 @@
 
   <section class="form-section">
     <h2>Start the Conversation</h2>
-    <form action="mailto:your@email.com" method="post" enctype="text/plain">
+    <form action="/partner" method="POST">
       <input type="text" name="name" placeholder="Your Full Name" required>
       <input type="email" name="email" placeholder="Your Email Address" required>
       <input type="text" name="company" placeholder="Your Company or Organization">
@@ -65,5 +65,36 @@
     <p>&copy; 2025 Your Company Name. All rights reserved.</p>
     <a href="/customize" class="customize-btn">Customize Partnership</a>
   </footer>
+  <script>
+    const partnerForm = document.querySelector("form");
+  
+    partnerForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+  
+      const formData = new FormData(partnerForm);
+      const data = Object.fromEntries(formData.entries());
+  
+      try {
+        const response = await fetch("/partner", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+  
+        if (response.ok) {
+          alert("Thank you for reaching out! We’ll get back to you soon.");
+          partnerForm.reset();
+        } else {
+          alert("Oops! Something went wrong. Please try again later.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("Network error. Please try again.");
+      }
+    });
+  </script>
+  
 </body>
 </html>

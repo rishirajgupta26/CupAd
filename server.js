@@ -131,6 +131,39 @@ app.post("/customize", upload.single("design-file"), (req, res) => {
   });
 });
 
+app.post('/partner', (req, res) => {
+  const { name, company, email, message } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: `"Partner Form" <${process.env.EMAIL_USER}>`,
+    to: [process.env.EMAIL_TO, email],
+    subject: 'New Partnership Inquiry',
+    html: `
+      <h2>New Partnership Request</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Company:</strong> ${company}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong><br>${message}</p>
+    `,
+  };
+
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) {
+      console.error('Error sending partner email:', err);
+      return res.status(500).send('Something went wrong.');
+    }
+    res.status(200).send('Partner message sent successfully!');
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
