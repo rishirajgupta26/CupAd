@@ -284,18 +284,23 @@ footer {
 }
 
 .customize-btn {
-  background: linear-gradient(to right, #0077cc, #005fa3);
-  color: #386bb8;
-  padding: 16px 30px;
+  background-color: #064070;/* Uses your defined highlight color */
+  color: var(--text-color); /* Consistent with your theme */
+  padding: 16px 32px;
   font-size: 1.2rem;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
 
 .customize-btn:hover {
-  background: linear-gradient(to right, #005fa3, #004080);
-  transform: scale(1.03);
+  background-color: #0052cc; /* A slightly deeper shade of the highlight */
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
 }
+

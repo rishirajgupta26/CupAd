@@ -8,7 +8,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-W6RTK1Z1B4');
   </script>
   <meta charset="UTF-8" />
@@ -20,8 +19,6 @@
 </head>
 
 <body>
-  
-</div>
 
   <nav>
     <div class="nav-links">
@@ -37,8 +34,14 @@
         <span>+91 9234541697</span>
       </div>
     </div>
-    <div class="mobile-menu-btn">
+    <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
       <i class="fas fa-bars"></i>
+    </div>
+    <div id="mobileNav" class="mobile-nav">
+      <a href="/">HOME</a>
+      <a href="/about">ABOUT US</a>
+      <a href="/partner">PARTNER WITH US</a>
+      <a href="/contact">CONTACT US</a>
     </div>
   </nav>
 
@@ -117,7 +120,6 @@
       </div>
     </form>
 
-
     <div class="preview-section">
       <h3>Your Custom Cup Preview</h3>
       <div class="cup-image">
@@ -144,7 +146,13 @@
       <p class="contact">Need help with your design? <a href="/contact">Contact our team</a></p>
     </div>
   </div>
-  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById("mobileNav").classList.toggle("show");
+    }
+  </script>
+
 </body>
 
 </html>

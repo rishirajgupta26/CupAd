@@ -8,29 +8,82 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-W6RTK1Z1B4');
   </script>
   <meta charset="UTF-8">
   <title>Contact Us | CupAd</title>
   <link rel="stylesheet" href="/public/css/contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    .logo img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    @media (max-width: 768px) {
+      .logo img {
+        max-height: 40px;
+      }
+    }
+
+    .nav-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+  </style>
 </head>
 
 <body>
- 
-</div>
-
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="/"><img src="/public/images/logo.png" alt="CupAd Logo"></a>
+      </div>
+      <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+      <div class="nav-links" id="mobile-nav">
+        <a href="/" class="active">HOME</a>
+        <a href="/about">ABOUT US</a>
+        <a href="/partner">PARTNER WITH US</a>
+        <a href="/team">TEAM</a>
+        <a href="/customize">CUSTOMIZE</a>
+        <a href="/contact">CONTACT US</a>
+      </div>
+    </div>
+  </nav>
 
   <div class="page-header">
-    <div class="nav-links">
-      <a href="/" class="active">HOME</a>
-      <a href="/about">ABOUT US</a>
-      <a href="/partner">PARTNER WITH US</a>
-      <a href="/team">TEAM</a>
-      <a href="/customize">CUSTOMIZE</a>
-      <a href="/contact">CONTACT US</a>
-    </div>
     <h1>Contact Us</h1>
     <p>Get in touch with our team for any inquiries or to start your cup advertising campaign</p>
   </div>
@@ -44,7 +97,6 @@
         <p>West Bengal, India 700001</p>
         <p>India</p>
       </div>
-
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
         <h3>Phone Numbers</h3>
@@ -52,15 +104,13 @@
         <p>Sales: +91 9234541697</p>
         <p>Support: +91 9883863381</p>
       </div>
-
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
         <h3>Email Addresses</h3>
         <p>General: cupad.co@gmail.com</p>
         <p>Sales: rishiraj260706@gmail.com</p>
-        <p>Support:cupad.co@gmail.com</p>
+        <p>Support: cupad.co@gmail.com</p>
       </div>
-
       <div class="contact-card">
         <div class="contact-icon"><i class="fas fa-clock"></i></div>
         <h3>Business Hours</h3>
@@ -79,36 +129,29 @@
           <label for="name">Your Name</label>
           <input type="text" id="name" name="name" required>
         </div>
-
         <div class="form-group">
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" required>
         </div>
-
         <div class="form-group">
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" name="phone">
         </div>
-
         <div class="form-group">
           <label for="subject">Subject</label>
           <input type="text" id="subject" name="subject" required>
         </div>
-
         <div class="form-group">
           <label for="message">Your Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
-
         <button type="submit" class="submit-btn">Send Message</button>
       </form>
 
       <script>
         const form = document.getElementById('contact-form');
-
         form.addEventListener('submit', async function (e) {
           e.preventDefault();
-
           const name = form.name.value.trim();
           const email = form.email.value.trim();
           const phone = form.phone.value.trim();
@@ -167,7 +210,6 @@
         <img src="/public/images/logo.png" alt="CupAd Logo">
         <p>Your Branding Medium</p>
       </div>
-
       <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
@@ -178,20 +220,24 @@
           <li><a href="/customize">Customize Your Cup</a></li>
         </ul>
       </div>
-
       <div class="footer-contact">
         <h3>Contact Us</h3>
-        <p><i class="fas fa-map-marker-alt"></i>kolkata,India</p>
+        <p><i class="fas fa-map-marker-alt"></i> kolkata, India</p>
         <p><i class="fas fa-phone"></i> +91 9234541697</p>
         <p><i class="fas fa-envelope"></i> cupad.co@gmail.com</p>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2024 CupAd. All Rights Reserved.</p>
     </div>
   </footer>
 
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 
 </html>

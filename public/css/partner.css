@@ -31,13 +31,20 @@ nav {
   background-color: #2c3e50;
   border-bottom: 2px solid #e0e0e0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
   flex-wrap: wrap;
+  z-index: 1000;
+}
+
+.logo a {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .nav-links {
   display: flex;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -86,8 +93,39 @@ nav {
 .mobile-menu-btn {
   display: none;
   font-size: 24px;
-  color: #003d73;
+  color: #ffffff;
   cursor: pointer;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background-color: #2c3e50;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .contact-info {
+    display: none;
+  }
 }
 
 /* Header */
@@ -114,12 +152,12 @@ header p {
 .intro-section {
   max-width: 1200px;
   margin: 60px auto;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   align-items: center;
   justify-content: center;
+  padding: 0 20px;
 }
 
 .image-wrapper {
@@ -217,13 +255,13 @@ footer .customize-btn:hover {
   background-color: #12314f;
 }
 
-/* Responsive */
+/* Responsive Tweaks */
 @media (max-width: 768px) {
   .intro-section {
     flex-direction: column;
   }
 
-  header h1 {
+  .hero-content h1 {
     font-size: 2.2rem;
   }
 
@@ -233,15 +271,5 @@ footer .customize-btn:hover {
 
   form {
     padding: 10px;
-  }
-
-  .nav-links {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .contact-info {
-    justify-content: center;
-    margin-top: 10px;
   }
 }

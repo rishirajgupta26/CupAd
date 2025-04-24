@@ -21,9 +21,9 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-jPiYW4JFRhzbAfCgV1EuHAxhlBH0vE.png"
-                alt="CupAd Logo">
+            <img src="/public/images/logo.png" alt="CupAd Logo">
         </div>
+    
         <div class="nav-links">
             <a href="/">HOME</a>
             <a href="/about" class="active">ABOUT US</a>
@@ -31,6 +31,7 @@
             <a href="/customize">CUSTOMIZE</a>
             <a href="/contact">CONTACT US</a>
         </div>
+    
         <div class="contact-info">
             <i class="fas fa-phone"></i>
             <div>
@@ -38,11 +39,14 @@
                 <span>+91 9234541697</span>
             </div>
         </div>
-        <div class="mobile-menu-btn">
+    
+        <!-- MOVE THIS TO THE OUTSIDE -->
+        <div class="hamburger" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
-
+    
+    
     <main>
         <div class="page-header">
             <h1>About Us</h1>
@@ -155,6 +159,13 @@
     </footer>
 
     <script src="/public/js/script.js"></script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+    
 </body>
 
 </html>

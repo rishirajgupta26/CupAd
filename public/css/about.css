@@ -23,6 +23,10 @@ nav {
     top: 0;
     z-index: 1000;
     flex-wrap: wrap;
+   justify-content: space-between;
+        
+    
+    
 }
 
 .logo img {
@@ -270,47 +274,46 @@ footer {
     color: #aaa;
 }
 
-/* Responsive Tweaks */
+/* Default hidden on desktop */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
+}
+
+/* Show on small screens */
 @media (max-width: 768px) {
-    .about-section,
-    .about-section.reverse {
-        flex-direction: column;
-        text-align: center;
+    .hamburger {
+        display: block;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
-        gap: 10px;
-        background-color: #2c3e50;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
-        padding: 20px 0;
-        text-align: center;
-        z-index: 999;
+        background-color: #222;
+        z-index: 1000;
+        padding: 1rem 0;
     }
 
     .nav-links.show {
         display: flex;
     }
 
-    .mobile-menu-btn {
-        display: block;
+    nav {
+        position: relative;
+        flex-wrap: wrap;
     }
 
     .contact-info {
         display: none;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
     }
 }
