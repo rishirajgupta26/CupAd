@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6RTK1Z1B4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-W6RTK1Z1B4');
+  </script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Partner With Us</title>
   <link rel="stylesheet" href="/public/css/partner.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <nav>
     <div class="nav-links">
@@ -44,7 +55,8 @@
     <div class="text-content">
       <h2>Why Partner With Us?</h2>
       <p>
-        Whether you're a brand, agency, nonprofit, or entrepreneur, we believe strong partnerships create lasting impact. 
+        Whether you're a brand, agency, nonprofit, or entrepreneur, we believe strong partnerships create lasting
+        impact.
         Work with us to build campaigns, products, and strategies that matter.
       </p>
     </div>
@@ -56,7 +68,8 @@
       <input type="text" name="name" placeholder="Your Full Name" required>
       <input type="email" name="email" placeholder="Your Email Address" required>
       <input type="text" name="company" placeholder="Your Company or Organization">
-      <textarea name="message" rows="6" placeholder="Tell us about your project or partnership idea..." required></textarea>
+      <textarea name="message" rows="6" placeholder="Tell us about your project or partnership idea..."
+        required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
@@ -67,13 +80,13 @@
   </footer>
   <script>
     const partnerForm = document.querySelector("form");
-  
+
     partnerForm.addEventListener("submit", async function (e) {
       e.preventDefault();
-  
+
       const formData = new FormData(partnerForm);
       const data = Object.fromEntries(formData.entries());
-  
+
       try {
         const response = await fetch("/partner", {
           method: "POST",
@@ -82,7 +95,7 @@
           },
           body: JSON.stringify(data),
         });
-  
+
         if (response.ok) {
           alert("Thank you for reaching out! We’ll get back to you soon.");
           partnerForm.reset();
@@ -95,6 +108,7 @@
       }
     });
   </script>
-  
+
 </body>
+
 </html>

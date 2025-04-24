@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6RTK1Z1B4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-W6RTK1Z1B4');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Customize Your Cup</title>
@@ -37,32 +46,33 @@
       Create a custom cup advertisement that perfectly represents your brand. Choose your cup size, design options, and
       distribution network to maximize your campaign’s impact.
     </p>
-    
-    <form id="customization-form" class="customization-section" action="/customize" method="POST" enctype="multipart/form-data">
+
+    <form id="customization-form" class="customization-section" action="/customize" method="POST"
+      enctype="multipart/form-data">
       <div class="form-section">
         <h2>Design Your Cup Ad</h2>
-    
+
         <div class="section">
           <label>1. Choose Cup Size</label>
           <label><input type="radio" name="cup-size" value="small" /> Small (8 oz)</label>
           <label><input type="radio" name="cup-size" value="medium" checked /> Medium (12 oz)</label>
           <label><input type="radio" name="cup-size" value="large" /> Large (16 oz)</label>
         </div>
-    
+
         <div class="section">
           <label>2. Design Coverage</label>
           <label><input type="radio" name="design-coverage" value="logo-only" /> Logo Only</label>
           <label><input type="radio" name="design-coverage" value="partial" /> Partial Design</label>
           <label><input type="radio" name="design-coverage" value="full" checked /> Full Design</label>
         </div>
-    
+
         <div class="section">
           <label>3. Color Options</label>
           <input type="color" name="primary-color" value="#0066a1" />
           <input type="color" name="secondary-color" />
           <label><input type="checkbox" name="full-color" value="yes" /> Full color printing (additional cost)</label>
         </div>
-    
+
         <div class="section">
           <label>4. Additional Features</label>
           <label><input type="checkbox" name="features" value="qr-code" checked /> QR Code Integration</label>
@@ -70,19 +80,20 @@
           <label><input type="checkbox" name="features" value="eco-materials" /> Eco-Friendly Materials</label>
           <label><input type="checkbox" name="features" value="cup-sleeve" /> Custom Cup Sleeve</label>
         </div>
-    
+
         <div class="section">
           <label>5. Order Quantity</label>
           <input type="range" name="quantity" min="1000" max="50000" value="5000" id="quantity-range" />
           <p id="quantity-display">5,000 cups</p>
         </div>
-    
+
         <div class="section">
           <label>6. Upload Your Design File</label>
           <input type="file" name="design-file" accept="image/*,.pdf,.ai,.psd" />
-          <label><input type="checkbox" name="need-design-help" value="yes" /> If you want us to make your ad as well for you, please check the box.</label>
+          <label><input type="checkbox" name="need-design-help" value="yes" /> If you want us to make your ad as well
+            for you, please check the box.</label>
         </div>
-    
+
         <div class="section">
           <h3>7. Your Information</h3>
           <label>
@@ -98,38 +109,38 @@
             <textarea name="customer-address" placeholder="Enter full delivery address" rows="4" required></textarea>
           </label>
         </div>
-    
+
         <button class="quote-btn" type="submit">Request Quote</button>
       </div>
     </form>
-    
 
-      <div class="preview-section">
-        <h3>Your Custom Cup Preview</h3>
-        <div class="cup-image">
-          <img src="https://via.placeholder.com/150x150.png?text=PLACE+YOUR+AD+HERE" alt="Cup Preview" />
-        </div>
-        <ul>
-          <li>✓ Medium (12 oz) Cup</li>
-          <li>✓ Full Design Coverage</li>
-          <li>✓ Primary Color: #0066a1</li>
-          <li>✓ QR Code Integration</li>
-          <li>✓ Quantity: 5,000 cups</li>
-        </ul>
-      </div>
 
-      <div class="why-section feature">
-        <h3>Why Customize?</h3>
-        <p><strong>Brand Recognition:</strong> Custom cup designs ensure your brand stands out and gets noticed by
-          consumers.</p>
-        <p><strong>Targeted Marketing:</strong> Choose specific café locations that match your target demographic.</p>
-        <p><strong>Measurable Results:</strong> QR codes and special offers allow you to track engagement and conversion
-          rates.</p>
-        <p><strong>Cost-Effective:</strong> Cup advertising provides excellent ROI compared to traditional advertising
-          channels.</p>
-        <p class="contact">Need help with your design? <a href="/contact">Contact our team</a></p>
+    <div class="preview-section">
+      <h3>Your Custom Cup Preview</h3>
+      <div class="cup-image">
+        <img src="https://via.placeholder.com/150x150.png?text=PLACE+YOUR+AD+HERE" alt="Cup Preview" />
       </div>
+      <ul>
+        <li>✓ Medium (12 oz) Cup</li>
+        <li>✓ Full Design Coverage</li>
+        <li>✓ Primary Color: #0066a1</li>
+        <li>✓ QR Code Integration</li>
+        <li>✓ Quantity: 5,000 cups</li>
+      </ul>
     </div>
+
+    <div class="why-section feature">
+      <h3>Why Customize?</h3>
+      <p><strong>Brand Recognition:</strong> Custom cup designs ensure your brand stands out and gets noticed by
+        consumers.</p>
+      <p><strong>Targeted Marketing:</strong> Choose specific café locations that match your target demographic.</p>
+      <p><strong>Measurable Results:</strong> QR codes and special offers allow you to track engagement and conversion
+        rates.</p>
+      <p><strong>Cost-Effective:</strong> Cup advertising provides excellent ROI compared to traditional advertising
+        channels.</p>
+      <p class="contact">Need help with your design? <a href="/contact">Contact our team</a></p>
+    </div>
+  </div>
   </div>
 </body>
 
