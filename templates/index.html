@@ -19,28 +19,46 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <img src="/public/images/logo.png" alt="CupAd Logo">
-        </div>
-        <div class="nav-links">
-            <a href="/" class="active">HOME</a>
-            <a href="/about">ABOUT US</a>
-            <a href="/partner">PARTNER WITH US</a>
-            <a href="/team"> TEAM</a>
-            <a href="/customize">CUSTOMIZE</a>
-            <a href="/contact">CONTACT US</a>
-
-
-        </div>
-        <div class="contact-info">
-            <i class="fas fa-phone"></i>
-            <div>
-                <span>CALL US ANYTIME</span>
-                <span>+91 9234541697</span>
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="/public/images/logo.png" alt="CupAd Logo">
             </div>
-        </div>
-    </nav>
+    
+            <!-- Hamburger Menu Icon -->
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <div class="nav-links" id="navLinks">
+                <a href="/" class="active">HOME</a>
+                <a href="/about">ABOUT US</a>
+                <a href="/partner">PARTNER WITH US</a>
+                <a href="/team">TEAM</a>
+                <a href="/customize">CUSTOMIZE</a>
+                <a href="/contact">CONTACT US</a>
+            </div>
+    
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <span>CALL US ANYTIME</span>
+                    <span>+91 9234541697</span>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- The rest of your content remains unchanged -->
+    
+        <script src="/public/js/script.js"></script>
+        <script>
+            // Toggle nav on small devices
+            document.getElementById("hamburger").addEventListener("click", function () {
+                document.getElementById("navLinks").classList.toggle("show");
+            });
+        </script>
+    </body>
+    
 
     <main>
         <div class="hero">

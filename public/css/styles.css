@@ -2,7 +2,7 @@
   --primary-color: #2c3e50;
   --accent-color: #092c54;
   --text-color: #ffffff;
-  
+
   --feature-bg: #2c3e50;
   --highlight-color: #006eff;
 }
@@ -17,7 +17,6 @@
 body {
   background: linear-gradient(135deg, #064070, #ffffff);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -27,7 +26,6 @@ body {
   color: var(--text-color);
 }
 
-/* Overlay for readability */
 body::before {
   content: "";
   position: fixed;
@@ -50,15 +48,25 @@ nav {
   position: relative;
   z-index: 1;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
 .logo img {
   height: 50px;
 }
 
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -144,8 +152,6 @@ nav {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-
-
 /* Features */
 .feature {
   background: var(--feature-bg);
@@ -221,10 +227,6 @@ nav {
     padding: 2rem;
   }
 
-  .nav-links {
-    display: none;
-  }
-
   .hero h1 {
     font-size: 2.2rem;
   }
@@ -239,33 +241,61 @@ nav {
     justify-content: center;
     margin: 2rem 0;
   }
-  footer {
-    background-color: #fff;
-    padding: 40px 0;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
-    margin-top: 40px;
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    margin-top: 1rem;
+    padding: 1rem 0;
   }
-  
-  .customize-footer {
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 1.5rem;
     text-align: center;
   }
-  
-  .customize-btn {
-    background: linear-gradient(to right, #0077cc, #005fa3);
-    color: #386bb8;
-    padding: 16px 30px;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+
+  .hamburger {
+    display: block;
   }
-  
-  .customize-btn:hover {
-    background: linear-gradient(to right, #005fa3, #004080);
-    transform: scale(1.03);
+
+  .contact-info {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
   }
-  
-  
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  padding: 40px 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+}
+
+.customize-footer {
+  text-align: center;
+}
+
+.customize-btn {
+  background: linear-gradient(to right, #0077cc, #005fa3);
+  color: #386bb8;
+  padding: 16px 30px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.customize-btn:hover {
+  background: linear-gradient(to right, #005fa3, #004080);
+  transform: scale(1.03);
 }
