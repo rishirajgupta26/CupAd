@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     color: #333;
 }
 
@@ -17,16 +17,20 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     background-color: #000;
     color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
     margin: 0 1rem;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -37,20 +41,20 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .contact-info span {
     display: block;
-    font-size: 0.85rem;
 }
 
+/* Mobile Menu */
 .mobile-menu-btn {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-/* Mobile Menu */
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -60,9 +64,14 @@ nav {
 
 .mobile-menu a {
     color: white;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #ffcc00;
 }
 
 .mobile-menu.show {
@@ -72,91 +81,125 @@ nav {
 /* Header */
 .page-header {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     background-color: #eee;
 }
 
 .page-header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #666;
 }
 
 /* Team Content */
 .team-content {
-    padding: 2rem;
+    padding: 3rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .team-intro {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+    color: #444;
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
 }
 
+/* Team Card */
 .team-member {
     background-color: white;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem 1.2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .member-image img {
-    width: 100%;
-    height: auto;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
     border-radius: 50%;
-    max-width: 150px;
+    margin-bottom: 1rem;
 }
 
+
 .member-info h3 {
-    margin-top: 1rem;
-    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
     color: #222;
 }
 
 .member-title {
     color: #888;
-    font-size: 0.9rem;
-    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    margin: 0.3rem 0;
 }
 
 .member-bio {
     font-size: 0.95rem;
     margin: 1rem 0;
+    color: #555;
 }
 
 .member-social a {
     color: #000;
     margin: 0 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
 }
 
 .member-social a:hover {
     color: #0077b5;
 }
 
-/* Join Team Section */
+/* Join Team */
 .join-team {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 4rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.join-team h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.join-team p {
+    color: #666;
+    font-size: 1rem;
 }
 
 .join-team .cta-button {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
     background-color: #000;
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .join-team .cta-button:hover {
@@ -172,8 +215,9 @@ nav {
 
 .social-icon {
     margin: 0 0.5rem;
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 1.6rem;
+    color: #444;
+    transition: color 0.3s ease;
 }
 
 .social-icon:hover {
@@ -184,7 +228,7 @@ nav {
 footer {
     background-color: #222;
     color: #eee;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
 .footer-content {
@@ -210,15 +254,16 @@ footer {
 .footer-links a {
     color: #eee;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
     color: #ffcc00;
 }
 
-.footer-contact p,
-.footer-contact i {
+.footer-contact p {
     font-size: 0.9rem;
+    margin-bottom: 0.3rem;
 }
 
 .footer-bottom {
@@ -237,5 +282,10 @@ footer {
 
     .mobile-menu-btn {
         display: block;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }

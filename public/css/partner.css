@@ -1,14 +1,16 @@
 /* Global Styles */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: #f4f7fa;
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -30,16 +32,16 @@ nav {
   padding: 20px 40px;
   background-color: #2c3e50;
   border-bottom: 2px solid #e0e0e0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
-  flex-wrap: wrap;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo a {
   color: #fff;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .nav-links {
@@ -134,18 +136,22 @@ header {
   color: white;
   padding: 100px 20px 80px;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
 }
 
 header p {
   font-size: 1.25rem;
   color: #f1f1f1;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+  font-weight: 400;
 }
 
 /* Intro Section */
@@ -169,30 +175,52 @@ header p {
 
 .image-wrapper img {
   width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  max-width: 550px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.05);
 }
 
 .text-content {
   flex: 1;
   min-width: 300px;
+  padding: 20px;
+  text-align: left;
+}
+
+.text-content h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
 }
 
 /* Form Section */
 .form-section {
-  max-width: 800px;
+  max-width: 900px;
   margin: 60px auto;
   padding: 40px 20px;
   background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .form-section h2 {
   text-align: center;
   color: #1d3557;
   margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 form {
@@ -237,6 +265,7 @@ footer {
   background-color: #eaeef2;
   font-size: 0.95rem;
   color: #555;
+  margin-top: 40px;
 }
 
 footer .customize-btn {
@@ -259,17 +288,22 @@ footer .customize-btn:hover {
 @media (max-width: 768px) {
   .intro-section {
     flex-direction: column;
+    padding: 0 20px;
   }
 
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   header p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
-  form {
-    padding: 10px;
+  .form-section {
+    padding: 20px 10px;
+  }
+
+  .image-wrapper img {
+    max-width: 100%;
   }
 }
